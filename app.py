@@ -2252,7 +2252,9 @@ def admin_delete_all():
     except Exception as e:
         return {"ok": False, "error": str(e)}, 500
 
-# STATIC / UPLOADS
+# # STATIC / UPLOADS
+from flask import send_from_directory
+
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(str(UPLOAD_FOLDER), filename)
@@ -2261,8 +2263,7 @@ def uploaded_file(filename):
 def static_files(filename):
     return send_from_directory(str(BASE_DIR / 'static'), filename)
 
+
+# IMPORTANT: DO NOT run app locally in production environments
 if __name__ == "__main__":
-    import webbrowser, threading
-    url = "http://127.0.0.1:5000"
-    threading.Timer(1.2, lambda: webbrowser.open(url)).start()
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=7860, debug=False)
