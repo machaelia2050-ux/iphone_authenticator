@@ -130,8 +130,8 @@ All configuration is at the top of `app.py`:
 
 ```python
 IPHONE_THRESHOLD = 0.45    # Minimum AI confidence to pass the image check
-ADMIN_PASSWORD   = "..."   # Change this before deploying
-SECRET_KEY       = "..."   # Flask session key — change this too
+ADMIN_PASSWORD   = "..."   
+SECRET_KEY       = "..."   
 ```
 
 ---
